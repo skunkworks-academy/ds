@@ -25,10 +25,10 @@ Use the HTTPS URL for Google Calendar or Outlook web subscriptions. The `webcal:
 | Monday | 18:30–19:15 | Focused theory / vendor learning | Learn one senior-level concept and identify a design decision | Notes + source link + one question/decision |
 | Wednesday | 18:30–19:15 | Guided lab planning | Define scope, assumptions, architecture, data boundary and test plan | Lab plan / issue |
 | Thursday | 18:30–19:30 | Build / lab execution | Produce working technical evidence | Code, configuration, test output or diagram |
-| Saturday | 09:00–10:30 | Deep work, documentation and portfolio | Finish the weekly artefact and reflection | README, evidence, lessons learned |
+| Saturday | 09:00–10:00 | Deep work, documentation and portfolio | Finish the weekly artefact and reflection | README, evidence, lessons learned |
 | Alternate Wednesday | 19:30–20:00 | Mentor review | Review evidence, blockers, KPI movement and next decision | Review note + next actions |
 
-The base cadence is approximately **3 hours 30 minutes per week**, with an additional 30-minute mentor session every second week. The mentor may adjust the timetable when operational duties make a particular week unrealistic, but any change should preserve the weekly evidence outcome.
+The base cadence is approximately **3 hours 30 minutes per week**, with an additional 30-minute mentor session every second week. The average across a two-week cycle is approximately **3 hours 45 minutes per week**, within the 3–4 hour target. The mentor may adjust the timetable when operational duties make a particular week unrealistic, but any change should preserve the weekly evidence outcome.
 
 ## 12-week schedule
 
