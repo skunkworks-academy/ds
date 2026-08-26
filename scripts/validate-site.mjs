@@ -15,7 +15,7 @@ if(!pkg.scripts?.['generate:pdf']||!pkg.scripts?.build?.includes('generate:pdf')
 if(!pkg.dependencies?.pdfkit)errors.push('package.json: pdfkit dependency missing');
 const contentRoots=['docs','src','scripts','README.md','PRIVACY.md'];
 const forbidden=['Deshansingh0@gmail.com','Deshan@skunkwork.africa','082 097 3363','820973363','1847818518','account_statement'];
-function scan(target){const full=path.join(root,target);if(!fs.existsSync(full))return;const st=fs.statSync(full);if(st.isDirectory()){for(const e of fs.readdirSync(full))scan(path.join(target,e));return;}if(!/\.(md|mdx|js|jsx|mjs|css|json|txt)$/i.test(target))return;const c=fs.readFileSync(full,'utf8');for(const s of forbidden)if(c.includes(s))errors.push(`${target}: contains protected source data`)}
+function scan(target){if(target==='scripts/validate-site.mjs')return;const full=path.join(root,target);if(!fs.existsSync(full))return;const st=fs.statSync(full);if(st.isDirectory()){for(const e of fs.readdirSync(full))scan(path.join(target,e));return;}if(!/\.(md|mdx|js|jsx|mjs|css|json|txt)$/i.test(target))return;const c=fs.readFileSync(full,'utf8');for(const s of forbidden)if(c.includes(s))errors.push(`${target}: contains protected source data`)}
 for(const r of contentRoots)scan(r);
 const sprint=read('docs/12-week-sprint.md');const weekRows=(sprint.match(/^\|\s*\d+\s*\|/gm)||[]).length;if(weekRows!==12)errors.push(`docs/12-week-sprint.md: expected 12 week rows, found ${weekRows}`);
 if(errors.length){console.error('IDR site validation failed.');for(const e of errors)console.error(`- ${e}`);process.exit(1)}
