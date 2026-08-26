@@ -104,13 +104,16 @@ function bullet(text) {
   const y = doc.y;
   doc.font('Helvetica-Bold').fontSize(10).fillColor(BLUE).text('•', x, y, {width: 12, lineBreak: false});
   doc.font('Helvetica').fontSize(9.3).fillColor(INK).text(text, x + 13, y, {width: contentWidth() - 13, lineGap: 2});
+  doc.x = x;
   doc.moveDown(0.2);
 }
 
 function infoBox(title, text, fill = PANEL) {
   const pad = 10;
   const w = contentWidth();
+  doc.font('Helvetica-Bold').fontSize(11);
   const titleH = doc.heightOfString(title, {width: w - pad * 2});
+  doc.font('Helvetica').fontSize(9.2);
   const bodyH = doc.heightOfString(text, {width: w - pad * 2, lineGap: 3});
   const h = titleH + bodyH + 30;
   ensureSpace(h + 8);
@@ -169,7 +172,6 @@ function table(headers, rows, widths, fontSize = 7.3) {
   doc.y = y + 8;
 }
 
-// Cover page
 const coverX = doc.page.margins.left;
 doc.rect(0, 0, pageWidth(), 10).fill(BLUE);
 doc.font('Helvetica-Bold').fontSize(9).fillColor(BLUE).text('SKUNKWORKS ACADEMY', coverX, 96);
