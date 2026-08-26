@@ -325,11 +325,11 @@ section('Operating rhythm', 'Weekly study and mentor cadence');
 table(
   ['Cadence', 'Suggested time', 'Activity', 'Purpose'],
   [
-    ['Monday', '18:30-19:15', 'Focused learning', 'Official vendor module / architecture reading'],
-    ['Wednesday', '18:30-19:30', 'Hands-on lab', 'Safe sandbox, synthetic data, documented evidence'],
-    ['Thursday', '18:30-19:15', 'Project build', 'Architecture, automation or governance artefact'],
-    ['Saturday', '09:00-10:00', 'Documentation & review', 'README, decision log, lessons learned, portfolio update'],
-    ['Alternate week', '45 min', 'Mentor review', 'Evidence, blockers, decisions, KPI movement and next actions'],
+    ['Monday', '18:30-19:15', 'Focused theory / vendor learning', 'Senior-level concept and design decision'],
+    ['Wednesday', '18:30-19:15', 'Guided lab planning', 'Scope, architecture and test plan'],
+    ['Thursday', '18:30-19:30', 'Build / lab execution', 'Working technical evidence'],
+    ['Saturday', '09:00-10:30', 'Deep work, documentation and portfolio', 'Finish artefact and reflection'],
+    ['Alternate Wednesday', '19:30-20:00', 'Mentor review', 'Feedback, blockers, evidence and next decision'],
   ],
   [90, 90, 135, 180], 6.8,
 );
