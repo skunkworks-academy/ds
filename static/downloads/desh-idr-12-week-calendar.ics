@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Skunkworks Academy//Desh IDR//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Desh IDR — 12 Week Sprint
+BEGIN:VEVENT
+UID:desh-idr-theory@skunkworksacademy.com
+DTSTART:20260831T183000
+DTEND:20260831T191500
+RRULE:FREQ=WEEKLY;COUNT=12;BYDAY=MO
+SUMMARY:Desh IDR — Focused theory / vendor learning
+DESCRIPTION:Senior-level concept learning and architecture decision preparation.
+END:VEVENT
+BEGIN:VEVENT
+UID:desh-idr-plan@skunkworksacademy.com
+DTSTART:20260902T183000
+DTEND:20260902T191500
+RRULE:FREQ=WEEKLY;COUNT=12;BYDAY=WE
+SUMMARY:Desh IDR — Lab planning
+DESCRIPTION:Define scope, architecture, controls and test plan.
+END:VEVENT
+BEGIN:VEVENT
+UID:desh-idr-build@skunkworksacademy.com
+DTSTART:20260903T183000
+DTEND:20260903T193000
+RRULE:FREQ=WEEKLY;COUNT=12;BYDAY=TH
+SUMMARY:Desh IDR — Applied build / lab
+DESCRIPTION:Create working technical evidence using authorised or synthetic data.
+END:VEVENT
+BEGIN:VEVENT
+UID:desh-idr-portfolio@skunkworksacademy.com
+DTSTART:20260905T090000
+DTEND:20260905T103000
+RRULE:FREQ=WEEKLY;COUNT=12;BYDAY=SA
+SUMMARY:Desh IDR — Portfolio and documentation
+DESCRIPTION:Finish evidence, README, tests, lessons and next actions.
+END:VEVENT
+BEGIN:VEVENT
+UID:desh-idr-mentor@skunkworksacademy.com
+DTSTART:20260902T193000
+DTEND:20260902T200000
+RRULE:FREQ=WEEKLY;INTERVAL=2;COUNT=6;BYDAY=WE
+SUMMARY:Desh IDR — Mentor review with Raydo Matthee
+DESCRIPTION:Review evidence, blockers, decisions and next highest-value action.
+END:VEVENT
+END:VCALENDAR
