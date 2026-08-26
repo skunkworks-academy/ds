@@ -10,7 +10,7 @@ sidebar_label: Download PDF & Sign-Off
 
 A branded, offline PDF snapshot of Desh's complete roadmap is generated automatically from the repository release process.
 
-<div className="button-row"><a className="button button--primary button--lg" href="https://ds.skunkworksacademy.com/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf" download>Download full IDR PDF</a><a className="button button--secondary button--lg" href="https://ds.skunkworksacademy.com/downloads/desh-idr-12-week-calendar.ics">Download 12-week calendar</a></div>
+<div className="button-row"><a className="button button--primary button--lg" href="/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf" download>Download full IDR PDF</a><a className="button button--secondary button--lg" href="https://ds.skunkworksacademy.com/downloads/desh-idr-12-week-calendar.ics">Download 12-week calendar</a></div>
 
 The PDF includes the senior-professional development placement, 12-month North Star, development priorities, 12-month roadmap, 12-week applied sprint, credential milestones, authorised labs, portfolio projects, KPIs, mentor cadence, privacy controls and sign-off framework.
 
