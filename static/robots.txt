@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Personal development roadmap: do not index or archive.

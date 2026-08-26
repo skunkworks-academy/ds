@@ -1,0 +1,29 @@
+name: Validate Desh IDR
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate
+      - run: npm run build
+      - name: Verify generated output
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s build/index.html
+          test -s build/CNAME
+          grep -Fxq 'ds.skunkworksacademy.com' build/CNAME
+          test -s build/downloads/desh-idr-12-week-calendar.ics
+          test -s build/idr/12-week-sprint.html || test -s build/idr/12-week-sprint/index.html
+          grep -Fq 'academy-navigation.js' build/index.html
+          grep -Fq 'favicon-black.png' build/index.html
+          ! grep -Fq '1847818518' build/index.html
