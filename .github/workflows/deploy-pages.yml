@@ -30,7 +30,12 @@ jobs:
           test -s build/CNAME
           grep -Fxq 'ds.skunkworksacademy.com' build/CNAME
           test -s build/downloads/desh-idr-12-week-calendar.ics
+          test -s build/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf
+          test "$(stat -c%s build/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf)" -gt 30000
+          head -c 5 build/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf | grep -q '%PDF-'
+          test -s build/idr/download-and-review.html || test -s build/idr/download-and-review/index.html
           grep -Fq 'academy-navigation.js' build/index.html
+          grep -Fq 'Deshan_Singh_Individual_Development_Roadmap.pdf' build/index.html
       - uses: actions/upload-pages-artifact@v4
         with:
           path: build
