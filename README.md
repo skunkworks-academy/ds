@@ -8,6 +8,9 @@ Interactive Docusaurus learning and career-development workspace for Deshan (Des
 - Framework: Docusaurus 3
 - Public shell: Skunkworks Academy canonical global header/footer
 - Mentor/facilitator: Raydo Matthee
+- Full PDF: https://ds.skunkworksacademy.com/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf
+
+The PDF is generated automatically during the production build from the current roadmap release and is validated before GitHub Pages deployment.
 
 ## Local development
 
@@ -21,6 +24,8 @@ npm run start
 ```bash
 npm run check
 ```
+
+The quality gate validates the Academy shell, privacy boundary, 12-week structure and downloadable PDF integration, then generates the PDF and runs the Docusaurus production build.
 
 ## Privacy
 
