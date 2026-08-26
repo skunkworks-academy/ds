@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" type="image/png" href="https://www.skunkworksacademy.com/images/favicon-black.png?v=2026.08.25.1" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/png" href="https://www.skunkworksacademy.com/images/favicon-white.png?v=2026.08.25.1" media="(prefers-color-scheme: dark)">
+  <title>Opening Desh IDR…</title>
+  <script>
+    (function () {
+      var known = new Set([
+        '/idr/overview','/idr/complete-idr','/idr/profile','/idr/pathway','/idr/roadmap',
+        '/idr/12-week-sprint','/idr/credentials','/idr/curriculum','/idr/labs','/idr/assignments',
+        '/idr/projects','/idr/calendar','/idr/kpis','/idr/mentor','/idr/governance','/idr/resources',
+        '/idr/references','/idr/download-and-review'
+      ]);
+      var path = window.location.pathname.replace(/\/+$/, '');
+      if (known.has(path)) {
+        window.location.replace(path + '/' + window.location.search + window.location.hash);
+        return;
+      }
+      window.location.replace('/?from=' + encodeURIComponent(window.location.pathname + window.location.search + window.location.hash));
+    }());
+  </script>
+</head>
+<body>
+  <p>Opening the Desh Individual Development Roadmap…</p>
+  <noscript><p><a href="/">Open the IDR dashboard</a></p></noscript>
+</body>
+</html>

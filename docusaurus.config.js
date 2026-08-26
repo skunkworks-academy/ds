@@ -8,7 +8,10 @@ const config = {
   baseUrl: '/',
   organizationName: 'skunkworks-academy',
   projectName: 'ds',
-  trailingSlash: false,
+  // GitHub Pages reliably serves directory index routes such as /idr/calendar/.
+  // The custom 404 fallback also normalises the same known routes when a browser
+  // requests them without the trailing slash.
+  trailingSlash: true,
   onBrokenLinks: 'throw',
   markdown: {mermaid: true, hooks: {onBrokenMarkdownLinks: 'throw'}},
   themes: ['@docusaurus/theme-mermaid'],
@@ -30,7 +33,13 @@ const config = {
     })}
   ],
   presets: [['classic', {
-    docs: {sidebarPath: require.resolve('./sidebars.js'), routeBasePath: 'idr', editUrl:'https://github.com/skunkworks-academy/ds/edit/main/', showLastUpdateAuthor:true, showLastUpdateTime:true},
+    docs: {
+      sidebarPath: require.resolve('./sidebars.js'),
+      routeBasePath: 'idr',
+      editUrl:'https://github.com/skunkworks-academy/ds/edit/main/',
+      showLastUpdateAuthor:true,
+      showLastUpdateTime:true
+    },
     blog:false,
     sitemap:false,
     theme:{customCss: require.resolve('./src/css/custom.css')}

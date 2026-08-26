@@ -1,20 +1,30 @@
 name: Validate Desh IDR
+
 on:
   pull_request:
   workflow_dispatch:
+
 permissions:
   contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+
       - run: npm install --no-audit --no-fund
-      - run: npm run validate
-      - run: npm run build
+
+      - name: Validate source, routes, references and privacy
+        run: npm run validate
+
+      - name: Build production site
+        run: npm run build
+
       - name: Verify generated output
         shell: bash
         run: |
@@ -22,13 +32,26 @@ jobs:
           test -s build/index.html
           test -s build/CNAME
           grep -Fxq 'ds.skunkworksacademy.com' build/CNAME
+          test -s build/404.html
           test -s build/downloads/desh-idr-12-week-calendar.ics
           test -s build/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf
           test "$(stat -c%s build/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf)" -gt 30000
           head -c 5 build/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf | grep -q '%PDF-'
-          test -s build/idr/12-week-sprint.html || test -s build/idr/12-week-sprint/index.html
-          test -s build/idr/download-and-review.html || test -s build/idr/download-and-review/index.html
-          grep -Fq 'academy-navigation.js' build/index.html
-          grep -Fq 'favicon-black.png' build/index.html
+
+          required_routes=(
+            overview complete-idr profile pathway roadmap 12-week-sprint credentials curriculum
+            labs assignments projects calendar kpis mentor governance resources references download-and-review
+          )
+          for route in "${required_routes[@]}"; do
+            test -s "build/idr/${route}/index.html"
+            grep -Fq 'academy-navigation.js' "build/idr/${route}/index.html"
+            grep -Fq 'favicon-black.png' "build/idr/${route}/index.html"
+          done
+
           grep -Fq 'Deshan_Singh_Individual_Development_Roadmap.pdf' build/index.html
-          ! grep -Fq '1847818518' build/index.html
+          grep -Fq '/idr/12-week-sprint/' build/idr/overview/index.html
+          grep -Fq '/idr/calendar/' build/idr/overview/index.html
+          grep -Fq '/idr/download-and-review/' build/idr/overview/index.html
+          grep -Fq 'learn.microsoft.com' build/idr/references/index.html
+          grep -Fq 'attack.mitre.org' build/idr/references/index.html
+          ! grep -R -Fq '1847818518' build --include='*.html'
