@@ -8,7 +8,7 @@ sidebar_label: Executive Summary
 
 <div className="idr-badges"><span className="idr-badge">12-month roadmap</span><span className="idr-badge">Senior-professional pathway</span><span className="idr-badge">12-week applied sprint</span><span className="idr-badge">Mentor: Raydo Matthee</span></div>
 
-<div className="button-row"><a className="button button--primary" href="https://ds.skunkworksacademy.com/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf" download>Download full IDR PDF</a><a className="button button--secondary" href="/idr/download-and-review">Review & sign-off</a></div>
+<div className="button-row"><a className="button button--primary" href="/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf" download>Download full IDR PDF</a><a className="button button--secondary" href="/idr/download-and-review">Review & sign-off</a></div>
 
 ## Provisional development placement
 
