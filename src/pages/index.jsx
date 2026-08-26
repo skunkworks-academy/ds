@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import ProgressWorkspace from '@site/src/components/ProgressWorkspace';
 import styles from './index.module.css';
 
-const pdfUrl='https://ds.skunkworksacademy.com/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf';
+const pdfUrl='/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf';
 const cards=[
  ['01','Validate the baseline','Confirm target role, time budget and priority enterprise problem.','/idr/overview'],
  ['02','Run the 12-week sprint','Use focused weekly modules built around real senior-level evidence.','/idr/12-week-sprint'],
