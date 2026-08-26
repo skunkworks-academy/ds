@@ -1,16 +1,26 @@
 ---
 id: download-and-review
-title: Review, Print and Sign-Off
-sidebar_label: Review & Sign-Off
+title: Download, Review and Sign-Off
+sidebar_label: Download PDF & Sign-Off
 ---
 
-# Review, Print and Sign-Off
+# Download, Review and Sign-Off
 
-## Print / save this IDR
+## Download the full IDR
 
-Use your browser's **Print → Save as PDF** function on this page or the dashboard. The interactive dashboard also provides a **Print / save PDF** action.
+A branded, offline PDF snapshot of Desh's complete roadmap is generated automatically from the repository release process.
 
-<div className="button-row"><a className="button button--primary" href="/">Open dashboard</a><a className="button button--secondary" href="https://ds.skunkworksacademy.com/downloads/desh-idr-12-week-calendar.ics">Download 12-week calendar</a></div>
+<div className="button-row"><a className="button button--primary button--lg" href="https://ds.skunkworksacademy.com/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf" download>Download full IDR PDF</a><a className="button button--secondary button--lg" href="https://ds.skunkworksacademy.com/downloads/desh-idr-12-week-calendar.ics">Download 12-week calendar</a></div>
+
+The PDF includes the senior-professional development placement, 12-month North Star, development priorities, 12-month roadmap, 12-week applied sprint, credential milestones, authorised labs, portfolio projects, KPIs, mentor cadence, privacy controls and sign-off framework.
+
+:::info Interactive progress remains online
+The downloadable PDF is a stable offline roadmap. Desh's live completion state, progress score, weekly-hours tracking and mentor notes remain in the browser-local interactive workspace on the [dashboard](/).
+:::
+
+## Print the live workspace
+
+Use the dashboard's **Print / save PDF** action when a review requires a snapshot of the current interactive progress state. This is separate from the formal downloadable roadmap PDF above.
 
 ## First 10 working days
 
