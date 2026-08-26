@@ -8,7 +8,7 @@ const config = {
   baseUrl: '/',
   organizationName: 'skunkworks-academy',
   projectName: 'ds',
-  trailingSlash: false,
+  trailingSlash: true,
   onBrokenLinks: 'throw',
   markdown: {mermaid: true, hooks: {onBrokenMarkdownLinks: 'throw'}},
   themes: ['@docusaurus/theme-mermaid'],
@@ -20,6 +20,7 @@ const config = {
     {tagName:'link',attributes:{rel:'icon',type:'image/png',sizes:'32x32',href:'https://www.skunkworksacademy.com/images/favicon-white.png?v=2026.08.25.1',media:'(prefers-color-scheme: dark)'}},
     {tagName:'link',attributes:{rel:'shortcut icon',type:'image/png',href:'https://www.skunkworksacademy.com/images/favicon-black.png?v=2026.08.25.1'}},
     {tagName:'link',attributes:{rel:'stylesheet',href:'https://www.skunkworksacademy.com/assets/skunkworks-design-system.css?v=2026.08.15.1','data-skunkworks-design-system':'canonical'}},
+    {tagName:'script',attributes:{defer:'true',src:'/route-recovery.js','data-idr-route-recovery':'v1'}},
     {tagName:'script',attributes:{defer:'true',src:'https://www.skunkworksacademy.com/assets/academy-navigation.js?v=2026.08.15.1','data-skunkworks-global-nav':'v10'}},
     {tagName:'script',attributes:{type:'application/ld+json'},innerHTML:JSON.stringify({
       '@context':'https://schema.org','@type':'LearningResource',name:'Deshan Singh Individual Development Roadmap',
@@ -30,7 +31,13 @@ const config = {
     })}
   ],
   presets: [['classic', {
-    docs: {sidebarPath: require.resolve('./sidebars.js'), routeBasePath: 'idr', editUrl:'https://github.com/skunkworks-academy/ds/edit/main/', showLastUpdateAuthor:true, showLastUpdateTime:true},
+    docs: {
+      sidebarPath: require.resolve('./sidebars.js'),
+      routeBasePath: 'idr',
+      editUrl:'https://github.com/skunkworks-academy/ds/edit/main/',
+      showLastUpdateAuthor:true,
+      showLastUpdateTime:true
+    },
     blog:false,
     sitemap:false,
     theme:{customCss: require.resolve('./src/css/custom.css')}

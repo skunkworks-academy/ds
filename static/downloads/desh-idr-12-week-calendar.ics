@@ -31,7 +31,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:desh-idr-portfolio@skunkworksacademy.com
 DTSTART:20260905T090000
-DTEND:20260905T103000
+DTEND:20260905T100000
 RRULE:FREQ=WEEKLY;COUNT=12;BYDAY=SA
 SUMMARY:Desh IDR — Portfolio and documentation
 DESCRIPTION:Finish evidence, README, tests, lessons and next actions.
