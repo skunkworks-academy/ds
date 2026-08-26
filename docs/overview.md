@@ -8,6 +8,8 @@ sidebar_label: Executive Summary
 
 <div className="idr-badges"><span className="idr-badge">12-month roadmap</span><span className="idr-badge">Senior-professional pathway</span><span className="idr-badge">12-week applied sprint</span><span className="idr-badge">Mentor: Raydo Matthee</span></div>
 
+<div className="button-row"><a className="button button--primary" href="/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf" download>Download full IDR PDF</a><a className="button button--secondary" href="/idr/download-and-review">Download PDF &amp; Sign-Off</a></div>
+
 ## Provisional development placement
 
 **Cloud & Cybersecurity Solution Architect / Senior Technical Lead**, with a secondary pathway toward **Infrastructure Manager, Cybersecurity Manager or IT Manager**.
