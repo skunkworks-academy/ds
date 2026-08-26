@@ -28,8 +28,8 @@ const required = [
   'docs/resources.md',
   'docs/references.md',
   'docs/download-and-review.md',
-  'scripts/generate-idr-pdf.mjs',
-  'static/404.html',
+  'scripts/generate-idr-pdf-v2.mjs',
+  'static/route-recovery.js',
   'static/CNAME',
   'static/downloads/desh-idr-12-week-calendar.ics',
 ];
@@ -49,6 +49,7 @@ for (const needle of [
   "baseUrl: '/'",
   'trailingSlash: true',
   "routeBasePath: 'idr'",
+  '/route-recovery.js',
   'academy-navigation.js',
   'skunkworks-design-system.css',
   'favicon-black.png',
@@ -56,6 +57,11 @@ for (const needle of [
   'onBrokenMarkdownLinks',
 ]) {
   if (!config.includes(needle)) errors.push(`docusaurus.config.js: missing ${needle}`);
+}
+
+const recovery = read('static/route-recovery.js');
+for (const route of ['/idr/12-week-sprint', '/idr/calendar', '/idr/download-and-review']) {
+  if (!recovery.includes(route)) errors.push(`static/route-recovery.js: missing ${route}`);
 }
 
 const sidebar = read('sidebars.js');
@@ -66,11 +72,6 @@ for (const id of ['complete-idr', '12-week-sprint', 'calendar', 'references', 'd
 const pdfUrl = '/downloads/Deshan_Singh_Individual_Development_Roadmap.pdf';
 for (const file of ['src/pages/index.jsx', 'docs/overview.md', 'docs/complete-idr.md', 'docs/download-and-review.md']) {
   if (!read(file).includes(pdfUrl)) errors.push(`${file}: missing full IDR PDF download`);
-}
-
-for (const route of ['/idr/12-week-sprint/', '/idr/calendar/', '/idr/download-and-review/']) {
-  const routeFile = route.includes('12-week-sprint') ? 'docs/12-week-sprint.md' : route.includes('calendar') ? 'docs/calendar.md' : 'docs/download-and-review.md';
-  if (!read(routeFile).includes('---')) errors.push(`${routeFile}: invalid route document`);
 }
 
 const sprint = read('docs/12-week-sprint.md');
@@ -97,8 +98,17 @@ for (const source of [
   if (!references.includes(source)) errors.push(`docs/references.md: missing reference family ${source}`);
 }
 
+const credentials = read('docs/credentials.md');
+if (!credentials.includes('retires on 31 August 2026')) errors.push('docs/credentials.md: AZ-500 retirement guidance missing');
+
+const pdfGenerator = read('scripts/generate-idr-pdf-v2.mjs');
+for (const file of ['docs/credentials.md', 'docs/references.md', 'docs/12-week-sprint.md', 'docs/calendar.md']) {
+  if (!pdfGenerator.includes(file)) errors.push(`scripts/generate-idr-pdf-v2.mjs: generated PDF does not include ${file}`);
+}
+
 const pkg = JSON.parse(read('package.json'));
-if (!pkg.scripts?.['generate:pdf'] || !pkg.scripts?.build?.includes('generate:pdf')) errors.push('package.json: PDF generation is not part of the build');
+if (pkg.scripts?.['generate:pdf'] !== 'node scripts/generate-idr-pdf-v2.mjs') errors.push('package.json: PDF generation is not using current IDR source generator');
+if (!pkg.scripts?.build?.includes('generate:pdf')) errors.push('package.json: PDF generation is not part of the build');
 if (!pkg.dependencies?.pdfkit) errors.push('package.json: pdfkit dependency missing');
 
 const contentRoots = ['docs', 'src', 'scripts', 'README.md', 'PRIVACY.md'];
@@ -127,4 +137,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('IDR site validation passed: custom domain, clean routes, complete IDR content, references, downloadable PDF integration and privacy controls are present.');
+console.log('IDR site validation passed: custom domain, clean routes, Docusaurus route recovery, complete IDR content, current references, PDF integration and privacy controls are present.');
