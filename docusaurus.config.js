@@ -2,6 +2,7 @@ const siteUrl = 'https://ds.skunkworksacademy.com';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  favicon: 'images/favicon-search.png',
   title: 'Desh Singh IDR',
   tagline: 'Cloud, Cybersecurity, Automation and Strategic IT Leadership',
   url: siteUrl,
@@ -16,9 +17,9 @@ const config = {
     {tagName:'meta',attributes:{name:'robots',content:'noindex, nofollow, noarchive, nosnippet'}},
     {tagName:'meta',attributes:{name:'referrer',content:'strict-origin-when-cross-origin'}},
     {tagName:'meta',attributes:{name:'color-scheme',content:'light dark'}},
-    {tagName:'link',attributes:{rel:'icon',type:'image/png',sizes:'32x32',href:'https://www.skunkworksacademy.com/images/favicon-black.png?v=2026.08.25.1',media:'(prefers-color-scheme: light)'}},
-    {tagName:'link',attributes:{rel:'icon',type:'image/png',sizes:'32x32',href:'https://www.skunkworksacademy.com/images/favicon-white.png?v=2026.08.25.1',media:'(prefers-color-scheme: dark)'}},
-    {tagName:'link',attributes:{rel:'shortcut icon',type:'image/png',href:'https://www.skunkworksacademy.com/images/favicon-black.png?v=2026.08.25.1'}},
+    {tagName:'link',attributes:{rel:'icon',type: 'image/png',sizes: '96x96',href: 'https://www.skunkworksacademy.com/images/favicon-search.png',media:'(prefers-color-scheme: light)'}},
+    {tagName:'link',attributes:{rel:'icon',type: 'image/png',sizes: '96x96',href: 'https://www.skunkworksacademy.com/images/favicon-search-dark.png',media:'(prefers-color-scheme: dark)'}},
+    {tagName:'link',attributes:{rel:'shortcut icon',type: 'image/png',href: 'https://www.skunkworksacademy.com/images/favicon-search.png'}},
     {tagName:'link',attributes:{rel:'stylesheet',href:'https://www.skunkworksacademy.com/assets/skunkworks-design-system.css?v=2026.08.15.1','data-skunkworks-design-system':'canonical'}},
     {tagName:'script',attributes:{defer:'true',src:'/route-recovery.js','data-idr-route-recovery':'v1'}},
     {tagName:'script',attributes:{defer:'true',src:'https://www.skunkworksacademy.com/assets/academy-navigation.js?v=2026.08.15.1','data-skunkworks-global-nav':'v10'}},

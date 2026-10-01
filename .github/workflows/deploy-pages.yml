@@ -65,6 +65,10 @@ jobs:
           grep -Fq '/route-recovery.js' build/index.html
           grep -Fq 'Deshan_Singh_Individual_Development_Roadmap.pdf' build/index.html
 
+      - name: Install and verify Academy search favicons
+        uses: skunkworks-academy/www/.github/actions/search-favicons@070f621875577a66ae43cdffa7e9d20c65efdc71
+        with:
+          artifact-path: "build"
       - uses: actions/upload-pages-artifact@v4
         with:
           path: build
