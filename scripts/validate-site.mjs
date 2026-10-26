@@ -52,8 +52,8 @@ for (const needle of [
   '/route-recovery.js',
   'academy-navigation.js',
   'skunkworks-design-system.css',
-  'favicon-black.png',
-  'favicon-white.png',
+  'favicon-search.png',
+  'favicon-search-dark.png',
   'onBrokenMarkdownLinks',
 ]) {
   if (!config.includes(needle)) errors.push(`docusaurus.config.js: missing ${needle}`);
@@ -115,7 +115,7 @@ const contentRoots = ['docs', 'src', 'scripts', 'README.md', 'PRIVACY.md'];
 const forbidden = ['Deshansingh0@gmail.com', 'Deshan@skunkwork.africa', '082 097 3363', '820973363', '1847818518', 'account_statement'];
 
 function scan(target) {
-  if (target === 'scripts/validate-site.mjs') return;
+  if (path.normalize(target) === path.normalize('scripts/validate-site.mjs')) return;
   const full = path.join(root, target);
   if (!fs.existsSync(full)) return;
   const stat = fs.statSync(full);
