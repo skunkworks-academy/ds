@@ -57,6 +57,8 @@ jobs:
           done
 
           grep -Fq 'Deshan_Singh_Individual_Development_Roadmap.pdf' build/index.html
+          grep -Fq 'favicon-search.png' build/index.html
+          grep -Fq 'favicon-search-dark.png' build/index.html
           grep -Fq '/idr/12-week-sprint/' build/idr/overview/index.html
           grep -Fq '/idr/calendar/' build/idr/overview/index.html
           grep -Fq '/idr/download-and-review/' build/idr/overview/index.html
