@@ -29,6 +29,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          trap 'echo "Generated output check failed: $BASH_COMMAND" >&2' ERR
           test -s build/index.html
           test -s build/CNAME
           grep -Fxq 'ds.skunkworksacademy.com' build/CNAME
