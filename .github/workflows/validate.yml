@@ -51,7 +51,8 @@ jobs:
           for route in "${required_routes[@]}"; do
             test -s "build/idr/${route}/index.html"
             grep -Fq 'academy-navigation.js' "build/idr/${route}/index.html"
-            grep -Fq 'favicon-black.png' "build/idr/${route}/index.html"
+            grep -Fq 'favicon-search.png' "build/idr/${route}/index.html"
+            grep -Fq 'favicon-search-dark.png' "build/idr/${route}/index.html"
             grep -Fq '/route-recovery.js' "build/idr/${route}/index.html"
           done
 
